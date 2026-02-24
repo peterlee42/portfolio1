@@ -1,18 +1,20 @@
 import type { Metadata } from 'next';
-import { Inconsolata } from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/components/theme-provider';
 
-import { NavigationBar } from './app-components/Navbar';
-import { ModeToggle } from './app-components/ThemeButton';
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+});
 
-const inconsolata = Inconsolata({
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
   subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
   title: 'Peter Lee',
-  description: "Peter Lee's Portfolio",
+  description: 'Created by Peter Lee',
 };
 
 export default function RootLayout({
@@ -21,25 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body className={`${inconsolata.className} antialiased`}>
-        <ThemeProvider
-          attribute='class'
-          enableSystem
-          defaultTheme='system'
-          disableTransitionOnChange
-        >
-          <header className='fixed top-5 w-full flex justify-center'>
-            <div className='bg-blue-100 w-1/2 p-3 rounded-full'>
-              <ModeToggle />
-              <NavigationBar />
-            </div>
-          </header>
-          {children}
-          <footer className='bg-zinc-100'>
-            <p>footer</p>
-          </footer>
-        </ThemeProvider>
+    <html lang='en'>
+      <body className='absolute inset-0 h-full w-full bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]'>
+        <main>{children}</main>
       </body>
     </html>
   );
