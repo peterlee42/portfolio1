@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
+import uoftLogo from '../assets/uoft.png';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,6 +25,8 @@ export default function Navbar() {
     { href: '#about', label: 'about' },
     { href: '#experience', label: 'experience' },
     { href: '#projects', label: 'projects' },
+    { href: '#skills', label: 'skills' },
+    { href: '#awards', label: 'awards' },
     { href: '#blogs', label: 'blogs' },
   ];
 
@@ -31,7 +34,8 @@ export default function Navbar() {
     <>
       <nav>
         <a href='#' className='nav-name'>
-          Peter Lee
+          <img src={uoftLogo} alt='UofT' className='nav-logo' />
+          PL
         </a>
 
         <div className='nav-right'>

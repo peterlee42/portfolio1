@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from './Link';
 
 const emailAddress = 'pjoon.lee@mail.utoronto.ca';
 
@@ -24,21 +25,9 @@ export default function HeroLinks() {
           email
         </a>
         {' / '}
-        <a
-          href='https://github.com/peterlee42'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          github
-        </a>
+        <Link href='https://github.com/peterlee42'>github</Link>
         {' / '}
-        <a
-          href='https://www.linkedin.com/in/petersjlee42/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          linkedin
-        </a>
+        <Link href='https://www.linkedin.com/in/petersjlee42/'>linkedin</Link>
       </p>
 
       <div
