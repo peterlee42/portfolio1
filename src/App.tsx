@@ -32,10 +32,6 @@ function App() {
                   <span className='hero-emphasis'>backend development</span>
                   .{' '}
                 </p>
-                <p className='hero-desc'>
-                  I enjoy learning aobut how things work under the hood.
-                </p>
-
                 <SocialLinks />
               </div>
             </section>
