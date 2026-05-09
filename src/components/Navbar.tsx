@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
-import uoftLogo from '../assets/uoft.png';
+import uoftLogo from '../assets/uoft/uoft.png';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,6 +28,7 @@ export default function Navbar() {
     { href: '#skills', label: 'skills' },
     { href: '#awards', label: 'awards' },
     { href: '#blogs', label: 'blogs' },
+    { href: '/Peter_Lee_Resume.pdf', label: 'resume' },
   ];
 
   return (
@@ -40,7 +41,12 @@ export default function Navbar() {
 
         <div className='nav-right'>
           {navLinks.map(({ href, label }) => (
-            <a key={href} href={href}>
+            <a
+              key={href}
+              href={href}
+              target={href.endsWith('.pdf') ? '_blank' : undefined}
+              rel={href.endsWith('.pdf') ? 'noopener noreferrer' : undefined}
+            >
               {label}
             </a>
           ))}
@@ -85,7 +91,13 @@ export default function Navbar() {
           ×
         </button>
         {navLinks.map(({ href, label }) => (
-          <a key={href} href={href} onClick={closeMenu}>
+          <a
+            key={href}
+            href={href}
+            onClick={closeMenu}
+            target={href.endsWith('.pdf') ? '_blank' : undefined}
+            rel={href.endsWith('.pdf') ? 'noopener noreferrer' : undefined}
+          >
             {label}
           </a>
         ))}
