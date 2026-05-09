@@ -1,7 +1,17 @@
 import Navbar from './components/Navbar';
-import HeroLinks from './components/HeroLinks';
+import SocialLinks from './components/SocialLinks';
 import ThemeProvider from './components/ThemeProvider';
 import Link from './components/Link';
+import ProjectImageCarousel from './components/ProjectImageCarousel';
+import {
+  tizcordImages,
+  contextBasedCaptioningInterfaceImages,
+  gitchoresImages,
+  businessFlightImages,
+  columnsImages,
+  caschDataAnalysisImages,
+} from './assets/project-images';
+
 import './App.css';
 
 function App() {
@@ -19,26 +29,38 @@ function App() {
                   <span className='hero-emphasis'>University of Toronto</span>{' '}
                   focused on{' '}
                   <span className='hero-emphasis'>systems programming</span> and{' '}
-                  <span className='hero-emphasis'>backend development</span>.
+                  <span className='hero-emphasis'>backend development</span>
+                  .{' '}
                 </p>
                 <p className='hero-desc'>
-                  Interests: distributed systems, networking, operating systems,
-                  backend infrastructure, developer tools
+                  I enjoy learning aobut how things work under the hood.
                 </p>
-                <HeroLinks />
+
+                <SocialLinks />
               </div>
             </section>
             <div className='divider' />
             <section className='section' id='about'>
               <p className='section-label'>About</p>
               <p className='about-body'>
-                I like understanding how things work under the hood — whether
-                that&apos;s an operating system or a neural network. I&apos;m
-                studying CS at UofT with a focus on systems and AI/ML, and
-                I&apos;m happiest when I&apos;m building something that bridges
-                the two. Always open to interesting projects and collaborations.
+                I like to build web application, as well as lower-level projects
+                in C/C++ that apply core CS concepts like networking,
+                concurrency, and memory management. Recently built a
+                socket-based chat server in C, which strengthened my interest in
+                distributed systems and infrastructure-focused software
+                engineering.
               </p>
               <p className='section-label'>Currently</p>
+              <p className='about-body'>
+                I&apos;m exploring distributed systems concepts through side
+                projects in C++. Also, I'm expanding the Context Based
+                Captioning and maintaining Tizcord.
+              </p>
+              <p className='section-label'>Outside of CS</p>
+              <p className='about-body'>
+                I enjoy lifting weights, playing my guitar, cooking, and
+                listening to music.
+              </p>
             </section>
             <div className='divider' />
             <section className='section' id='experience'>
@@ -109,14 +131,20 @@ function App() {
                 <article className='proj-card proj-card--minimal'>
                   <div className='proj-top'>
                     <span className='proj-kicker'>01</span>
-                    <Link
-                      href='https://github.com/Lunear01/Tizcord'
-                      className='proj-link'
-                    >
-                      repo ↗
-                    </Link>
+                    <div className='proj-links'>
+                      <Link
+                        href='https://github.com/Lunear01/Tizcord'
+                        className='proj-link'
+                      >
+                        repo ↗
+                      </Link>
+                    </div>
                   </div>
-                  <h3>tizcord</h3>
+                  <ProjectImageCarousel
+                    projectName='Tizcord'
+                    images={tizcordImages}
+                  />
+                  <h3>Tizcord</h3>
                   <p>
                     Built a concurrent TCP chat server in C to better understand
                     socket multiplexing and real-time systems. Designed a custom
@@ -136,14 +164,59 @@ function App() {
                 <article className='proj-card proj-card--minimal'>
                   <div className='proj-top'>
                     <span className='proj-kicker'>02</span>
-                    <Link
-                      href='https://github.com/peterlee42/GitChores'
-                      className='proj-link'
-                    >
-                      repo ↗
-                    </Link>
+                    <div className='proj-links'>
+                      <Link
+                        href='https://github.com/uoft-tmi/context-based-captioning-interface'
+                        className='proj-link'
+                      >
+                        repo ↗
+                      </Link>
+                      <Link
+                        href='https://github.com/uoft-tmi/context-based-captioning-interface'
+                        className='proj-link'
+                      >
+                        live ↗
+                      </Link>
+                    </div>
                   </div>
-                  <h3>gitchores</h3>
+                  <ProjectImageCarousel
+                    projectName='Context Based Captioning Interface'
+                    images={contextBasedCaptioningInterfaceImages}
+                  />
+                  <h3>Context Based Captioning Interface</h3>
+                  <p>
+                    A web app that provides context-aware real-time lecture
+                    captioning. Users optionally upload PDF lecture notes before
+                    a session, then stream microphone audio to receive
+                    near-real-time captions and a downloadable final transcript.
+                  </p>
+                  <div className='proj-meta'>
+                    <span>Python</span>
+                    <span>TypeScript</span>
+                    <span>FastAPI</span>
+                    <span>Next.js</span>
+                    <span>WebSockets</span>
+                    <span>PostgreSQL</span>
+                    <span>Real-time</span>
+                  </div>
+                </article>
+                <article className='proj-card proj-card--minimal'>
+                  <div className='proj-top'>
+                    <span className='proj-kicker'>03</span>
+                    <div className='proj-links'>
+                      <Link
+                        href='https://github.com/peterlee42/GitChores'
+                        className='proj-link'
+                      >
+                        repo ↗
+                      </Link>
+                    </div>
+                  </div>
+                  <ProjectImageCarousel
+                    projectName='GitChores'
+                    images={gitchoresImages}
+                  />
+                  <h3>GitChores</h3>
                   <p>
                     GitChores is a desktop application build in Java to organize
                     roommate chores through a GitHub-style workflow. It features
@@ -157,6 +230,91 @@ function App() {
                     <span>Clean Architecture</span>
                     <span>Design Patterns</span>
                     <span>AWS</span>
+                  </div>
+                </article>
+                <article className='proj-card proj-card--minimal'>
+                  <div className='proj-top'>
+                    <span className='proj-kicker'>04</span>
+                    <div className='proj-links'>
+                      <Link
+                        href='https://github.com/peterlee42/Business_Flight_Visualizer'
+                        className='proj-link'
+                      >
+                        repo ↗
+                      </Link>
+                    </div>
+                  </div>
+                  <ProjectImageCarousel
+                    projectName='Business Flight Visualizer'
+                    images={businessFlightImages}
+                  />
+                  <h3>Business Flight Visualizer</h3>
+                  <p>
+                    Built a graph-based global meeting optimizer in Python using
+                    DFS over a network of 10,000+ airport nodes to compute
+                    minimum-travel central meeting locations.
+                  </p>
+                  <div className='proj-meta'>
+                    <span>Python</span>
+                    <span>Networkx</span>
+                    <span>Pandas</span>
+                    <span>Graph Algorithms</span>
+                    <span>Data Analysis</span>
+                  </div>
+                </article>
+                <article className='proj-card proj-card--minimal'>
+                  <div className='proj-top'>
+                    <span className='proj-kicker'>05</span>
+                    <div className='proj-links'>
+                      <Link
+                        href='https://github.com/peterlee42/Columns'
+                        className='proj-link'
+                      >
+                        repo ↗
+                      </Link>
+                    </div>
+                  </div>
+                  <ProjectImageCarousel
+                    projectName='Columns'
+                    images={columnsImages}
+                  />
+                  <h3>Columns</h3>
+                  <p>
+                    Developed a Tetris-inspired game in MIPS Assembly from
+                    scratch, featuring piece generation, rotation, line
+                    clearing, and a scoring system. The project deepened my
+                    understanding of low-level programming and memory management
+                    while providing a fun challenge in game development.
+                  </p>
+                  <div className='proj-meta'>
+                    <span>Assembly</span>
+                  </div>
+                </article>
+                <article className='proj-card proj-card--minimal'>
+                  <div className='proj-top'>
+                    <span className='proj-kicker'>06</span>
+                    <div className='proj-links'>
+                      <span className='proj-link'>research</span>
+                    </div>
+                  </div>
+                  <ProjectImageCarousel
+                    projectName='CASCH Research'
+                    images={caschDataAnalysisImages}
+                  />
+                  <h3>CASCH Research</h3>
+                  <p>
+                    Analyzed 10,000+ survey observations to model predictors of
+                    employee happiness using random forests.
+                  </p>
+                  <p>
+                    Achieved 84% test-set accuracy by evaluating model
+                    performance with confusion matrices and key classification
+                    metrics.
+                  </p>
+                  <div className='proj-meta'>
+                    <span>Python</span>
+                    <span>pandas</span>
+                    <span>scikit-learn</span>
                   </div>
                 </article>
               </div>
@@ -241,7 +399,7 @@ function App() {
                   <ul className='awards-list'>
                     <li>
                       <span className='award-name'>
-                        UofT Woodsworth Admissions Scholarship — $10,000
+                        University of Toronto Scholar — $10,000
                       </span>
                     </li>
                     <li>
@@ -339,25 +497,7 @@ function App() {
                 Feel free to reach out about systems programming, backend
                 engineering, or interesting ideas.
               </p>
-              <p className='footer-links'>
-                <a href={`mailto:pjoon.lee@mail.utoronto.ca`}>email</a>
-                {' / '}
-                <a
-                  href='https://github.com/peterlee42'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  github
-                </a>
-                {' / '}
-                <a
-                  href='https://www.linkedin.com/in/petersjlee42/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  linkedin
-                </a>
-              </p>
+              <SocialLinks containerClassName='footer-links' />
               <p className='footer-copy'>Peter Lee · 2026</p>
             </div>
           </div>
