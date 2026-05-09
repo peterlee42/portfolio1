@@ -28,7 +28,6 @@ export default function Navbar() {
     { href: '#skills', label: 'skills' },
     { href: '#awards', label: 'awards' },
     { href: '#blogs', label: 'blogs' },
-    { href: '/Peter_Lee_Resume.pdf', label: 'resume' },
   ];
 
   return (

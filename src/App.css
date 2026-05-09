@@ -127,6 +127,14 @@ nav {
   transition: color 0.25s ease;
 }
 
+.nav-separator {
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  line-height: 1;
+  opacity: 0.75;
+  user-select: none;
+}
+
 .nav-right a:hover {
   color: var(--text-primary);
 }
