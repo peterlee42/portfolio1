@@ -28,9 +28,10 @@ function App() {
                   CS student at the{' '}
                   <span className='hero-emphasis'>University of Toronto</span>{' '}
                   focused on{' '}
-                  <span className='hero-emphasis'>systems programming</span> and{' '}
-                  <span className='hero-emphasis'>backend development</span>
-                  .{' '}
+                  <span className='hero-emphasis'>
+                    Machine Learning Systems
+                  </span>
+                  .
                 </p>
                 <SocialLinks />
               </div>
@@ -39,8 +40,8 @@ function App() {
             <section className='section' id='about'>
               <p className='section-label'>About</p>
               <p className='about-body'>
-                I like to build web application, as well as lower-level projects
-                in C/C++ that apply core CS concepts like networking,
+                I like to build low-level projects in C/C++ as well as backend
+                systems that apply core CS concepts like networking,
                 concurrency, and memory management. Recently built a
                 socket-based chat server in C, which strengthened my interest in
                 distributed systems and infrastructure-focused software
@@ -48,9 +49,23 @@ function App() {
               </p>
               <p className='section-label'>Currently</p>
               <p className='about-body'>
-                I&apos;m exploring distributed systems concepts through side
-                projects in C++. Also, I'm expanding the Context Based
-                Captioning and maintaining Tizcord.
+                I&apos;m currently building a distributed ML training system in
+                C++ using a parameter-server architecture where multiple worker
+                nodes compute gradients on local data shards and sync back to a
+                central server over TCP. Also, I&apos;m maintaining{' '}
+                <a
+                  className='hero-emphasis'
+                  href='https://github.com/Lunear01/Tizcord'
+                >
+                  Tizcord
+                </a>{' '}
+                and the{' '}
+                <a
+                  className='hero-emphasis'
+                  href='https://github.com/uoft-tmi/context-based-captioning-interface'
+                >
+                  Context Based Captioning Interface
+                </a>
               </p>
               <p className='section-label'>Outside of CS</p>
               <p className='about-body'>
@@ -87,7 +102,7 @@ function App() {
                   <div className='timeline-marker' />
                   <div className='timeline-content'>
                     <span className='exp-date'>Oct 2025 — Apr 2026</span>
-                    <h3>Software Engineer</h3>
+                    <h3>Software Developer</h3>
                     <Link
                       href='https://tmi-website-v2.vercel.app/'
                       className='exp-company'
